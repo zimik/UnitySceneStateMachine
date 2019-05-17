@@ -14,11 +14,11 @@ public class SSMState : MonoBehaviour {
     [SerializeField]
     private SSMTransition[] Transitions;
 
-    public SSMTransition GetFirstAvailableTransition()
+    public SSMTransition GetFirstAvailableTransition(SSMEvent sSMEvent)
     {
         for (int i = 0; i< Transitions.Length; i++)
         {
-            if(Transitions[i].IsCanToGo())
+            if(Transitions[i].Event == sSMEvent && Transitions[i].IsCanToGo())
             {
                 return Transitions[i];
             }

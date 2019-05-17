@@ -13,7 +13,7 @@ public class SSMController : MonoBehaviour {
     {
         if(CurrentState != null)
         {
-            SSMTransition availableTransition = CurrentState.GetFirstAvailableTransition();
+            SSMTransition availableTransition = CurrentState.GetFirstAvailableTransition(sSMEvent);
             if(availableTransition != null)
             {
                 SetState(availableTransition.State);
